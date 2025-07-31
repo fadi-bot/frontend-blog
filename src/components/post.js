@@ -15,17 +15,17 @@ const Post = () => {
     getPost();
   }, [id]);
 
-  if (!Object.keys(post).length) return <div />;
+  if (!Object.keys(post).length) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.text}</p>
-      <p>
+    <div className="post-container">
+      <h1 className="post-title">{post.title}</h1>
+      <p className="post-text">{post.text}</p>
+      <p className="post-date">
         <em>Published {new Date(post.published_at).toLocaleString()}</em>
       </p>
-      <p>
-        <Link to="/">Go back</Link>
+      <p className="back-link">
+        <Link to="/">← Go back to posts</Link>
       </p>
     </div>
   );
