@@ -1,5 +1,7 @@
 import posts from './post/data'
 
-export function onRequestGet({
-    return Response.json(posts)
-})
+export async function onRequestGet() {
+    return new Response(JSON.stringify(posts), {
+        headers: { 'Content-Type': 'application/json' }
+    });
+}
